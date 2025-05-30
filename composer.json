@@ -1,0 +1,12 @@
+{
+    "name": "luisjdev0/emlaze_native",
+    "authors": [
+        {
+            "name": "Jose Luis Ortiz",
+            "email": "jortizsanchez922@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
