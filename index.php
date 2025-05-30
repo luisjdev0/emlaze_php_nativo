@@ -112,24 +112,14 @@ require_once 'templates/template.php';
                 language: {
                     url: "https://cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json"
                 },
-                columns: [{
-                        data: 'id'
-                    },
-                    {
-                        data: 'sku'
-                    },
-                    {
-                        data: 'nombre'
-                    },
-                    {
-                        data: 'cantidad'
-                    },
-                    {
-                        data: 'precio'
-                    },
-                    {
-                        data: 'total'
-                    },
+                columns: [
+                    { data: 'id' },
+                    { data: 'sku' },
+                    { data: 'nombre' },
+                    { data: 'cantidad' },
+                    { data: 'precio' },
+                    { data: 'total' },
+                    // Botones de acción
                     {
                         data: null,
                         render: (data, _, __) => `<button class="btn btn-warning btn-sm edit-button" data-bs-toggle="modal" data-bs-target="#creationFormModal" target='${data.sku}'><i class="bi bi-pencil"></i></button>`,
@@ -179,7 +169,8 @@ require_once 'templates/template.php';
                 $('#form-id').val(null)
                 $('#crear-item').html('Guardar')
                 $('#form-sku').prop('disabled', false)
-            });
+            })
+
             //Abrir modal para editar producto
             $(document).on('click', '.edit-button', async (btn) => {
                 $('#creationFormModalLabel').html('Editar producto')
@@ -196,7 +187,7 @@ require_once 'templates/template.php';
                 $('#crear-item').html('Editar')
 
                 $('#form-sku').prop('disabled', true)
-            });
+            })
 
             //Abrir modal para eliminar producto
             $(document).on('click', '.delete-button', async (btn) => {
